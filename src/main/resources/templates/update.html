@@ -1,0 +1,45 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chinh Sua Sinh Vien</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Chinh Sua Thong Tin Sinh Vien</h1>
+
+    <form th:action="@{/students/{id}(id=${student.id})}" method="POST">
+      <div>
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id" th:value="${student.id}" disabled />
+      </div>
+
+      <div>
+        <label for="name">Ho va Ten:</label>
+        <input type="text" id="name" name="name" th:value="${student.name}" required placeholder="Nhap ten sinh vien" />
+      </div>
+
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" th:value="${student.email}" required placeholder="Nhap email" />
+      </div>
+
+      <div>
+        <label for="age">Tuoi:</label>
+        <input type="number" id="age" name="age" th:value="${student.age}" required min="1" max="130" placeholder="Nhap tuoi" />
+      </div>
+
+      <div>
+        <button type="submit">Cap Nhat</button>
+        <a href="/students">
+          <button type="button">Huy Bo</button>
+        </a>
+      </div>
+    </form>
+  </body>
+</html>

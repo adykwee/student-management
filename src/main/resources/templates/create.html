@@ -1,0 +1,45 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Them Sinh Vien</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Them Sinh Vien Moi</h1>
+
+    <form action="/students" method="POST">
+      <div>
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id" required placeholder="Nhap ID" />
+      </div>
+
+      <div>
+        <label for="name">Ho va Ten:</label>
+        <input type="text" id="name" name="name" required placeholder="Nhap ten sinh vien" />
+      </div>
+
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="Nhap email" />
+      </div>
+
+      <div>
+        <label for="age">Tuoi:</label>
+        <input type="number" id="age" name="age" required min="1" max="130" placeholder="Nhap tuoi" />
+      </div>
+
+      <div>
+        <button type="submit">Luu</button>
+        <a href="/students">
+          <button type="button">Huy Bo</button>
+        </a>
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chi Tiet Sinh Vien</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Chi Tiet Sinh Vien</h1>
+
+    <div>
+      <span>ID:</span>
+      <span th:text="${student.id}">N/A</span>
+    </div>
+
+    <div>
+      <span>Ho va Ten:</span>
+      <span th:text="${student.name}">N/A</span>
+    </div>
+
+    <div>
+      <span>Email:</span>
+      <span th:text="${student.email}">N/A</span>
+    </div>
+
+    <div>
+      <span>Tuoi:</span>
+      <span th:text="${student.age}">N/A</span>
+    </div>
+
+    <div>
+      <a th:href="@{/students/{id}/edit(id=${student.id})}">
+        <button type="button">Chinh Sua</button>
+      </a>
+      <form action="#" th:action="@{/students/{id}/delete(id=${student.id})}" method="POST">
+        <button type="submit" onclick="return confirm('Ban co chac chan muon xoa sinh vien nay?');">
+          Xoa
+        </button>
+      </form>
+      <a href="/students">
+        <button type="button">Quay Lai</button>
+      </a>
+    </div>
+  </body>
+</html>
