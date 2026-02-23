@@ -5,9 +5,15 @@
 | Nguyễn Phan Quốc Anh | 2310116  |
 | Nguyễn Phan Việt Anh | 2310117  |
 
+# Public URL của Web Service
+
+https://student-management-re8n.onrender.com/
+
+# Hướng dẫn cách chạy dự án
+
 # Các câu hỏi lý thuyết
 
-## Lab 01
+## Lab 1
 
 ### 1. Dữ liệu lớn: Hãy thử thêm ít nhất 10 sinh viên nữa.
 
@@ -50,3 +56,5 @@ INSERT INTO students (id, name, email, age) VALUES (12, 'Le Thi M', 'lethim@exam
 - Tại sao mỗi lần tắt ứng dụng và chạy lại, dữ liệu cũ trong Database lại bị mất hết?
 
   Vì trong cấu hình Hibernate, `ddl-auto=create` có nghĩa là mỗi khi chạy lại app, Hibernate sẽ xóa dữ liệu cũ và tạo lại bảng mới.
+
+# Screenshot các module trong Lab 4
