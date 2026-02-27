@@ -56,6 +56,23 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 ```
 
+Cấu Hình Môi Trường (.env)
+Tạo file .env tại thư mục gốc của project với nội dung sau:
+
+```bash
+# PostgreSQL Database Configuration
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+POSTGRES_DB=student_management
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=YOUR_PASSWORD_HERE
+
+# Spring Datasource (su dung cac bien tren)
+SPRING_DATASOURCE_URL=jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
+SPRING_DATASOURCE_USERNAME=${POSTGRES_USER}
+SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
+```
+
 ### 4. Chạy ứng dụng
 
 Tại thư mục gốc của project, chạy lệnh sau để tải thư viện về:
