@@ -58,3 +58,8 @@ INSERT INTO students (id, name, email, age) VALUES (12, 'Le Thi M', 'lethim@exam
   Vì trong cấu hình Hibernate, `ddl-auto=create` có nghĩa là mỗi khi chạy lại app, Hibernate sẽ xóa dữ liệu cũ và tạo lại bảng mới.
 
 # Screenshot các module trong Lab 4
+
+<img width="1920" height="1140" alt="Screenshot 2026-02-27 124129" src="https://github.com/user-attachments/assets/e06e3f66-31ed-40c8-8320-766aa599ffd0" />
+<img width="1920" height="1140" alt="Screenshot 2026-02-27 122727" src="https://github.com/user-attachments/assets/dbaa5224-e6a3-4002-b0a0-b7e82c740982" />
+<img width="1920" height="1140" alt="Screenshot 2026-02-27 122757" src="https://github.com/user-attachments/assets/3b5eca3d-cee8-449f-a539-6f1ab81c635e" />
+<img width="1920" height="1140" alt="Screenshot 2026-02-27 122840" src="https://github.com/user-attachments/assets/35be9013-e3ce-4c9b-b77f-018e818c5b07" />
