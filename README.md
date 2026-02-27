@@ -7,9 +7,48 @@
 
 # Public URL của Web Service
 
-https://student-management-re8n.onrender.com/
+https://student-management-re8n.onrender.com/students
 
 # Hướng dẫn cách chạy dự án
+
+## Cài đặt và chạy với PostgreSQL
+
+### 1. Cài đặt PostgreSQL
+
+- Tải và cài đặt [PostgreSQL](https://www.postgresql.org/download/)
+- Ghi nhớ mật khẩu của user `postgres`
+
+### 2. Tạo Database
+
+```sql
+CREATE DATABASE student_management;
+```
+
+### 3. Cấu hình ứng dụng
+
+Trong file `application.properties`:
+
+```properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/student_management
+spring.datasource.username=postgres
+spring.datasource.password=YOUR_PASSWORD
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+```
+
+### 4. Chạy ứng dụng
+
+```bash
+./mvn spring-boot:run
+```
+
+### 5. Truy cập API
+
+Mở trình duyệt và gọi:
+
+```
+http://localhost:8080/students
+```
 
 # Các câu hỏi lý thuyết
 
