@@ -18,10 +18,23 @@ https://student-management-re8n.onrender.com/students
 - Tải và cài đặt [PostgreSQL](https://www.postgresql.org/download/)
 - Ghi nhớ mật khẩu của user `postgres`
 
-### 2. Tạo Database
+### 2. Tạo Database và Bảng `students`
+
+- Mở pgAdmin, tạo database `student-management`.
+- Tại database `student-management`, tạo bảng `students` và thêm dữ liệu.
 
 ```sql
-CREATE DATABASE student_management;
+-- Tao bang sinh vien
+CREATE TABLE IF NOT EXISTS students (
+id INTEGER PRIMARY KEY,
+name TEXT,
+email TEXT,
+age INTEGER
+);
+
+-- Them du lieu mau
+INSERT INTO students (id, name, email, age) VALUES (1, 'Nguyen Van A', 'vana@example.com', 20);
+INSERT INTO students (id, name, email, age) VALUES (2, 'Tran Thi B', 'thib@example.com', 21);
 ```
 
 ### 3. Cấu hình ứng dụng
@@ -29,14 +42,29 @@ CREATE DATABASE student_management;
 Trong file `application.properties`:
 
 ```properties
+spring.application.name=student-management
+
+# Cau hinh file Database PostgreSQL
 spring.datasource.url=jdbc:postgresql://localhost:5432/student_management
 spring.datasource.username=postgres
-spring.datasource.password=YOUR_PASSWORD
-spring.jpa.hibernate.ddl-auto=update
+spring.datasource.password=YOUR_PASSWORD_HERE
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+# Cau hinh JPA/Hibernate
 spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
 ```
 
 ### 4. Chạy ứng dụng
+
+Tại thư mục gốc của project, chạy lệnh sau để tải thư viện về:
+
+```bash
+./mvnw dependency:resolve
+```
+
+sau đó chạy lên sau để khởi động ứng dụng:
 
 ```bash
 ./mvn spring-boot:run
@@ -44,11 +72,7 @@ spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
 
 ### 5. Truy cập API
 
-Mở trình duyệt và gọi:
-
-```
-http://localhost:8080/students
-```
+Mở trình duyệt và gọi: http://localhost:8080/students
 
 # Các câu hỏi lý thuyết
 
